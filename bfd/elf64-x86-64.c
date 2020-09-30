@@ -1284,6 +1284,9 @@ elf_x86_64_tls_transition (struct bfd_link_info *info, bfd *abfd,
   unsigned int to_type = from_type;
   bfd_boolean check = TRUE;
 
+  /* Skip all TLS transitions. */
+  return TRUE;
+
   /* Skip TLS transition for functions.  */
   if (h != NULL
       && (h->type == STT_FUNC
